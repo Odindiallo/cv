@@ -6,23 +6,25 @@
 
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
+    line-height: 1.5;
     padding: 20px;
     background-color: #f4f4f4;
 }
 
 .container {
-    max-width: 800px;
+    width: 100%;
+    max-width: 21cm;
+    min-height: 29.7cm;
     margin: 0 auto;
     background: white;
-    padding: 30px;
+    padding: 2cm;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .download-btn {
     display: block;
     width: 200px;
-    margin: 0 0 30px auto;
+    margin: 0 0 20px auto;
     padding: 10px;
     background-color: #4CAF50;
     color: white;
@@ -36,7 +38,7 @@ body {
 }
 
 .cv-section {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 h1 {
@@ -49,10 +51,10 @@ h1 {
 
 h2 {
     color: #4CAF50;
-    margin: 25px 0 15px;
-    padding-bottom: 8px;
+    margin: 15px 0 10px;
+    padding-bottom: 5px;
     border-bottom: 1px solid #ddd;
-    font-size: 1.3em;
+    font-size: 1.2em;
 }
 
 h2:first-child {
@@ -61,40 +63,47 @@ h2:first-child {
 
 h3 {
     color: #666;
-    margin: 15px 0 5px;
+    margin: 10px 0 5px;
+    font-size: 1.1em;
 }
 
 .personal-info p {
-    margin: 8px 0;
+    margin: 5px 0;
+    font-size: 0.95em;
 }
 
 .work-experience {
-    margin: 15px 0;
+    margin: 10px 0;
 }
 
 .company {
     color: #666;
     font-style: italic;
+    font-size: 0.95em;
+    word-wrap: break-word;
 }
 
 .period {
     color: #888;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
+    font-size: 0.9em;
 }
 
 ul {
     list-style-position: inside;
-    margin: 10px 0;
+    margin: 8px 0;
 }
 
 li {
-    margin: 8px 0;
+    margin: 5px 0;
+    font-size: 0.95em;
     line-height: 1.4;
+    padding-left: 15px;
+    text-indent: -15px;
 }
 
 .skills, .languages {
     list-style-type: none;
-    padding-left: 5px;
 }
 
 .skills li:before, .languages li:before {
@@ -103,19 +112,91 @@ li {
     margin-right: 10px;
 }
 
-@media print {
+/* Responsive Design */
+@media screen and (max-width: 768px) {
     body {
-        background: none;
-        padding: 0;
+        padding: 10px;
     }
 
     .container {
-        box-shadow: none;
+        padding: 15px;
+        min-height: auto;
+    }
+
+    .download-btn {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    h2 {
+        font-size: 1.1em;
+    }
+
+    h3 {
+        font-size: 1em;
+    }
+
+    .personal-info p, 
+    .company, 
+    .period, 
+    li {
+        font-size: 0.9em;
+    }
+
+    li {
+        padding-left: 12px;
+        text-indent: -12px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        padding: 5px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    h2 {
+        margin: 12px 0 8px;
+    }
+
+    .personal-info p, 
+    .company, 
+    .period, 
+    li {
+        font-size: 0.85em;
+    }
+}
+
+@media print {
+    @page {
+        size: A4;
+        margin: 0;
+    }
+
+    body {
+        background: none;
         padding: 0;
-        max-width: none;
+        margin: 0;
+    }
+
+    .container {
+        width: 21cm;
+        height: 29.7cm;
+        padding: 2cm;
+        margin: 0;
+        box-shadow: none;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
     }
 
     .download-btn {
         display: none;
+    }
+
+    h2, h3, p, li {
+        page-break-inside: avoid;
     }
 }
