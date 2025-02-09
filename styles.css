@@ -126,22 +126,31 @@ li {
     }
 
     .container {
-        padding: 15px;
+        padding: 20px;
     }
 
     .download-btn {
         width: 100%;
         margin-bottom: 15px;
     }
+
+    ul {
+        padding-left: 16px;
+    }
+
+    li {
+        margin: 6px 0;
+    }
 }
 
 @media screen and (max-width: 480px) {
     body {
-        padding: 5px;
+        padding: 0;
     }
 
     .container {
-        padding: 10px;
+        padding: 15px;
+        box-shadow: none;
     }
 
     h2 {
@@ -161,6 +170,19 @@ li {
 
     .period {
         font-size: 0.9em;
+    }
+
+    ul {
+        padding-left: 15px;
+    }
+
+    .skills li, .languages li {
+        padding-left: 12px;
+    }
+
+    .skills li:before, .languages li:before {
+        font-size: 1.2em;
+        line-height: 1;
     }
 }
 
