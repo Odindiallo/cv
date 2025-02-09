@@ -1,0 +1,4 @@
+node_modules/
+generate-pdf.js
+package.json
+*.pdf
